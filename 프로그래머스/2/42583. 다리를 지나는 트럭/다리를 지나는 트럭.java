@@ -13,9 +13,7 @@ class Solution {
                     sum += truck_weights[i];
                     seconds++;
                     break;
-                } else if ( queue.size() == bridge_length ) {
-                    sum -= queue.poll(); //4,5
-                } else {
+                }  else if ( queue.size() < bridge_length) {
                     int temp = truck_weights[i] + sum;
                     if(temp <= weight) {
                         seconds++;
@@ -23,10 +21,11 @@ class Solution {
                         queue.add(truck_weights[i]);
                         break;
                     } else {
-                        // sum -= queue.poll(); //7.4
                         queue.add(0);
                         seconds++;
                     }
+                } else {
+                    sum -= queue.poll();
                 }
 
             }
