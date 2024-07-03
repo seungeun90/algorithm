@@ -13,7 +13,7 @@ class Solution {
                     sum += truck_weights[i];
                     seconds++;
                     break;
-                }  else if ( queue.size() < bridge_length) {
+                }  else if ( queue.size() < bridge_length && sum <= weight ) {
                     int temp = truck_weights[i] + sum;
                     if(temp <= weight) {
                         seconds++;
