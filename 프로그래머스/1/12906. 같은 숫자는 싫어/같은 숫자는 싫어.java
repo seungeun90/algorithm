@@ -2,13 +2,14 @@ import java.util.*;
 
 public class Solution {
     public int[] solution(int []arr) {
-      Stack<Integer> stack = new Stack<>();
-
+         int preNum = 10;
+        List<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
-            if(stack.isEmpty() || stack.peek() != arr[i]) {
-                stack.push(arr[i]);
+            if(preNum != arr[i]) {
+                list.add(arr[i]);
             }
+            preNum = arr[i];
         }
-        return stack.stream().mapToInt(i->i).toArray();
+        return list.stream().mapToInt(i->i).toArray();
     }
 }
