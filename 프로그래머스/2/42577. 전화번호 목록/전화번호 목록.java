@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 class Solution {
     public boolean solution(String[] phone_book) {
         boolean answer = true;
@@ -17,6 +16,7 @@ class Solution {
         }
 
         return answer;
+       
     }
     
 } 
